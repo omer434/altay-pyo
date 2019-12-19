@@ -1,0 +1,78 @@
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+    <div class="row">
+        <section>
+            <div class="wizard" style="width=100%">
+                <div class="wizard-inner" style="display: none">
+                    <div class="connecting-line" style="display: none"></div>
+                    <ul class="nav nav-tabs" role="tablist">
+
+                        <li role="presentation" class="active">
+                            <a href="#div-baslangic" data-toggle="tab" id="a-baslangic" aria-controls="step1" role="tab" title="Step 1">
+                                <span class="round-tab">
+                                    <i class="glyphicon glyphicon-folder-open"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="#div-yillar" data-toggle="tab" id="a-yillar" aria-controls="step2" role="tab" title="Step 2">
+                                <span class="round-tab">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#div-haftalar" data-toggle="tab" id="a-haftalar" aria-controls="step3" role="tab" title="Step 3">
+                                <span class="round-tab">
+                                    <i class="glyphicon glyphicon-picture"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                        <li role="presentation">
+                            <a href="#div-projeler" data-toggle="tab" id="a-projeler" aria-controls="complete" role="tab" title="Complete">
+                                <span class="round-tab">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <form role="form" style="width=100%">
+                    <div class="tab-content" style="width=100%">
+                        <div class="tab-pane active" id="div-baslangic" role="tabpanel" style="width=100%">
+                            {{>sorgulamaTipi}}
+                        </div>
+                        <div class="tab-pane" id="div-yillar" role="tabpanel">
+                            {{>yillar}}
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="div-haftalar" role="tabpanel">
+                            <h3>Haftalar</h3>
+                            <p>Hafta seçimi</p>
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="div-projeler" role="tabpanel">
+                            <h3>Projeler</h3>
+                            <p>Proje seçimi</p>
+                            <ul class="list-inline pull-right">
+                                <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
