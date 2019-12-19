@@ -1,0 +1,30 @@
+<haftalar>
+    <script>
+        $(document).ready(function() {
+        $("#haftalar").append(function() {
+            let weekCounter = 52;
+            for(var i=13; i>0; i--) {
+                $("#haftalar").append(rowStr(i));
+                for(let j=weekCounter; j>weekCounter-4; j--) {
+                    $("#hafta_satir_" + i).append(colStr(j));
+                }
+                weekCounter-=4;
+            }
+        })
+        });
+        var colStr = function(num) { return '<div class="col-sm-3 center-block">' +
+                      '<a class="list-group-item list-group-item-action btn-hafta" style="padding: 70px 30px 70px 70px">' +
+                       '<h1 class="display-4">' + num + '</h1>'  +
+                       '</a>'
+                       '</div>'};
+
+        var rowStr = function(num) {
+                      return '<div class="row" id=hafta_satir_' + num + '>' +
+                       '</div>'};
+
+       
+    </script>
+    <div class="container" id="haftalar">
+    
+    </div>
+</haftalar>

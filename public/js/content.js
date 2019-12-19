@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    if (window.history && window.history.pushState) {
+
+        window.history.pushState('forward', null, './#forward');
+    
+        $(window).on('popstate', function() {
+            $(".prev-step").click();
+        });
+    
+      }
+
     let oncekiAdimId = '';
 
     //Wizard
@@ -28,6 +38,27 @@ $(document).ready(function () {
         gotToTab('a-projeler');
     });
 
+    $(".btn-yil").click(function(e) {
+        oncekiAdimId = 'a-yillar';
+        gotToTab('a-haftalar');
+    })
+
+    $(".btn-hafta").click(function(e) {
+        oncekiAdimId = 'a-haftalar';
+        gotToTab('a-projeler');
+    })
+
+    $("#a-yillar").click(function(e) {
+        oncekiAdimId = 'a-baslangic';
+    })
+
+    $("#a-projeler").click(function(e) {
+        oncekiAdimId = 'a-haftalar';
+    })
+
+    $("#a-haftalar").click(function(e) {
+        oncekiAdimId = 'a-yillar';
+    })
 });
 
 function gotToTab(tabId) {

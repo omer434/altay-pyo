@@ -47,23 +47,32 @@
                 <form role="form" style="width=100%">
                     <div class="tab-content" style="width=100%">
                         <div class="tab-pane active" id="div-baslangic" role="tabpanel" style="width=100%">
+                            <h1 class="display-1">Sorgu Tipi</h1>
+                            <hr />
                             {{>sorgulamaTipi}}
                         </div>
                         <div class="tab-pane" id="div-yillar" role="tabpanel">
+                            <h1 class="display-1">Yıllar</h1>
+                            <button type="button" class="btn btn-default prev-step">Geri</button>
+                            <hr />
                             {{>yillar}}
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
-                            </ul>
+                            </ul> 
                         </div>
                         <div class="tab-pane" id="div-haftalar" role="tabpanel">
-                            <h3>Haftalar</h3>
-                            <p>Hafta seçimi</p>
+                            <h1 class="display-1">Haftalar</h1>
+                            <button type="button" class="btn btn-default prev-step">Geri</button>
+                            <hr />
+                            {{>haftalar}}
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
                             </ul>
                         </div>
                         <div class="tab-pane" id="div-projeler" role="tabpanel">
-                            <h3>Projeler</h3>
+                            <h1 class="display-1">Projeler</h1>
+                            <button type="button" class="btn btn-default prev-step">Geri</button>
+                            <hr />
                             <p>Proje seçimi</p>
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
