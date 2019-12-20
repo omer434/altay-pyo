@@ -73,14 +73,15 @@ $(document).ready(function () {
             res.json().then(data => {
                 let pdf = data.resp;
 
-                // $(".pdf-container").pdfviewer();
+                $('#modal-pdf').modal('show');
 
-                let pdfWindow = window.open("")
-                pdfWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(pdf)+"'></iframe>")
-                
-
+                let pdfStr = "data:application/pdf;base64, " + pdf;
+                $("#pdf-viewer").attr("src", pdfStr);
 
 
+
+                // let pdfWindow = window.open("")
+                // pdfWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(pdf)+"'></iframe>")
             });
         });
     });
@@ -107,12 +108,12 @@ function getProjeler() {
 
 let projeAccordion = function (data) {
     let div = $("<div id=proje_" + data.id + "></div>");
-    $(div).append('<span class="btn btn-info" data-toggle="collapse" data-target="#proje_content_' + data.id + '"><h1 class="display-6">' + data['proje'] + '</h1></span>');
+    $(div).append('<span class="btn btn-info" data-toggle="collapse" data-target="#proje_content_' + data.id + '"><h1 class="display-3">' + data['proje'] + '</h1><p class="lead">' + data['dosya-adi'] + '</p></span>');
     $(div).append('<hr />');
 
     let list = $("<ul></ul>");
     for (let i = 0; i < data['pdf'].length; i++) {
-        $(list).append("<li class='pdf-item' data-pdf-id='" + data['pdf'][i]['id'] + "'>" + data['pdf'][i]['name'] + "</li>");
+        $(list).append("<li class='list-group-item list-group-item-action pdf-item' data-pdf-id='" + data['pdf'][i]['id'] + "'><h1 class='display-4'>"+ data['pdf'][i]['name'] + "</h1></li>");
     }
 
     let collapsable = $('<div id="proje_content_' + data.id + '" class="collapse"></div>');

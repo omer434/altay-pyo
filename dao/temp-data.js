@@ -5,7 +5,7 @@ const tempData = [
         "hafta": 52,
         "pdf": [{id: 3, name: "samp3.pdf"}, {id: 2, name: "samp2.pdf" }],
         "proje": "SBS",
-        "dosya-adi": "SBS Haftalık Kaynak Kullanımı"
+        "dosya-adi": "Sanayi Bilgi Sistemi"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@ const tempData = [
         "hafta": 52,
         "pdf": [{id: 2, name: "samp2.pdf"}],
         "proje": "TIBOS",
-        "dosya-adi": "TIBOS Haftalık Kaynak Kullanımı"
+        "dosya-adi": "Ticaret Borsaları Bilgi Sistemi"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@ const tempData = [
         "hafta": 50,
         "pdf": [{id: 1, name: "samp1.pdf"}],
         "proje": "PERBIS",
-        "dosya-adi": "PERBIS Haftalık Kaynak Kullanımı"
+        "dosya-adi": "Perakende Bilgi Sistemi"
     }
 ];
 
