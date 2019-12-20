@@ -1,0 +1,28 @@
+{
+  "name": "altay-pyo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "handlebars": "^4.3.5",
+    "express": "^4.17.1",
+    "hbs": "^4.0.6",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omer434/altay-pyo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omer434/altay-pyo/issues"
+  },
+  "homepage": "https://github.com/omer434/altay-pyo#readme"
+}
