@@ -10,7 +10,7 @@ const tempData = [
     {
         "id": 2,
         "yil": 2019,
-        "hafta": 51,
+        "hafta": 52,
         "pdf": "samp2.pdf",
         "proje": "TIBOS",
         "dosya-adi": "TIBOS Haftalık Kaynak Kullanımı"

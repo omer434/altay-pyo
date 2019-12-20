@@ -38,8 +38,8 @@ $(document).ready(function () {
     });
 
     $("#btnProjelereGoreSorgula").click(function(e) {
-        oncekiAdimId = 'a-baslangic';
-        gotToTab('a-projeler');
+        // oncekiAdimId = 'a-baslangic';
+        // gotToTab('a-projeler');
     });
 
     $(".btn-yil").click(function(e) {
@@ -76,20 +76,25 @@ function gotToTab(tabId) {
 function getProjeler() {
     const res = fetch('/projeler?yil='+ seciliYil +'&hafta=' + seciliHafta + '').then(res=>{
         res.json().then(data => { 
-            console.log(data);
             let projeler = data.resp.map(t => t.proje);
             projeler = [...new Set(projeler)];
 
             $("#projeler").empty();
-            $("#projeler").append(projeAccordion(data.resp[0]));
+            for(let i=0; i< data.resp.length; i++) {
+                $("#projeler").append(projeAccordion(data.resp[i]));
+            }
         });
     });
+}
+
+function getPdf() {
+    console.log("asdasd")
 }
 
 let projeAccordion = function(data) {
     let div = $("<div id=proje_" + data.id + "></div>");
     $(div).append('<span class="btn btn-info" data-toggle="collapse" data-target="#proje_content_'+ data.id + '"><h1 class="display-6">' + data['proje'] + '</h1></span>');
     $(div).append('<hr />');
-    $(div).append('<div id="proje_content_'+ data.id + '" class="collapse">' + data['dosya-adi'] + '</div>');
+    $(div).append('<div id="proje_content_'+ data.id + '" class="collapse"><span click="getPdf()">' + data['pdf'] + '<span></div>');
     return div;
 }

@@ -22,21 +22,20 @@ app.use(express.static(publicDirPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather',
-        name: 'Ömer Öztürk'
+        title: 'Altay-PYO'
     });
 });
 
 app.get('/projeler', (req, res) => {
-    let yil = req.query.yil;
     let hafta = req.query.hafta;
+    let yil = req.query.yil;
 
-    let subData = data.filter(t => {
-        return t.yil == yil && t.hafta == hafta; 
+    let subData = data.filter( t => {
+        return t.yil == yil && t.hafta == hafta;
     });
 
     res.send({
-        resp: subData
+       resp: subData
     });
 })
 
