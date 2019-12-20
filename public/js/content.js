@@ -6,12 +6,12 @@ $(document).ready(function () {
     if (window.history && window.history.pushState) {
 
         window.history.pushState('forward', null, './#forward');
-    
-        $(window).on('popstate', function() {
+
+        $(window).on('popstate', function () {
             $(".prev-step").click();
         });
-    
-      }
+
+    }
 
     let oncekiAdimId = '';
 
@@ -19,82 +19,105 @@ $(document).ready(function () {
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 
         var $target = $(e.target);
-    
+
         if ($target.parent().hasClass('disabled')) {
             return false;
         }
     });
 
     //Geri butonu
-    $(".prev-step").click(function(e) {
+    $(".prev-step").click(function (e) {
         gotToTab(oncekiAdimId);
     });
 
     //Başlangıç Sayfası
-    $("#btnYillaraGoreSorgula").click(function(e) {
+    $("#btnYillaraGoreSorgula").click(function (e) {
         oncekiAdimId = 'a-baslangic';
         gotToTab('a-yillar');
 
     });
 
-    $("#btnProjelereGoreSorgula").click(function(e) {
+    $("#btnProjelereGoreSorgula").click(function (e) {
         // oncekiAdimId = 'a-baslangic';
         // gotToTab('a-projeler');
     });
 
-    $(".btn-yil").click(function(e) {
+    $(".btn-yil").click(function (e) {
         seciliYil = $(e.currentTarget).attr("data-item");
         oncekiAdimId = 'a-yillar';
         gotToTab('a-haftalar');
     })
 
-    $(".btn-hafta").click(function(e) {
+    $(".btn-hafta").click(function (e) {
         seciliHafta = $(e.currentTarget).attr("data-item");
         oncekiAdimId = 'a-haftalar';
         gotToTab('a-projeler');
         getProjeler();
     })
 
-    $("#a-yillar").click(function(e) {
+    $("#a-yillar").click(function (e) {
         oncekiAdimId = 'a-baslangic';
     })
 
-    $("#a-projeler").click(function(e) {
+    $("#a-projeler").click(function (e) {
         oncekiAdimId = 'a-haftalar';
     })
 
-    $("#a-haftalar").click(function(e) {
+    $("#a-haftalar").click(function (e) {
         oncekiAdimId = 'a-yillar';
     })
+
+    $('body').on('click', '.pdf-item', function (e) {
+        let pdfId = $(e.currentTarget).attr("data-pdf-id");
+        fetch('/pdf?id=' + pdfId).then(res => {
+            res.json().then(data => {
+                let pdf = data.resp;
+
+                // $(".pdf-container").pdfviewer();
+
+                let pdfWindow = window.open("")
+                pdfWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(pdf)+"'></iframe>")
+                
+
+
+
+            });
+        });
+    });
 });
 
 function gotToTab(tabId) {
-    $("#" + tabId).click().animate({opacity: 0}, 5000);
+    $("#" + tabId).click().animate({ opacity: 0 }, 5000);
 }
 
 //AJAX calls
 function getProjeler() {
-    const res = fetch('/projeler?yil='+ seciliYil +'&hafta=' + seciliHafta + '').then(res=>{
-        res.json().then(data => { 
+    fetch('/projeler?yil=' + seciliYil + '&hafta=' + seciliHafta + '').then(res => {
+        res.json().then(data => {
             let projeler = data.resp.map(t => t.proje);
             projeler = [...new Set(projeler)];
 
             $("#projeler").empty();
-            for(let i=0; i< data.resp.length; i++) {
+            for (let i = 0; i < data.resp.length; i++) {
                 $("#projeler").append(projeAccordion(data.resp[i]));
             }
         });
     });
 }
 
-function getPdf() {
-    console.log("asdasd")
-}
-
-let projeAccordion = function(data) {
+let projeAccordion = function (data) {
     let div = $("<div id=proje_" + data.id + "></div>");
-    $(div).append('<span class="btn btn-info" data-toggle="collapse" data-target="#proje_content_'+ data.id + '"><h1 class="display-6">' + data['proje'] + '</h1></span>');
+    $(div).append('<span class="btn btn-info" data-toggle="collapse" data-target="#proje_content_' + data.id + '"><h1 class="display-6">' + data['proje'] + '</h1></span>');
     $(div).append('<hr />');
-    $(div).append('<div id="proje_content_'+ data.id + '" class="collapse"><span click="getPdf()">' + data['pdf'] + '<span></div>');
+
+    let list = $("<ul></ul>");
+    for (let i = 0; i < data['pdf'].length; i++) {
+        $(list).append("<li class='pdf-item' data-pdf-id='" + data['pdf'][i]['id'] + "'>" + data['pdf'][i]['name'] + "</li>");
+    }
+
+    let collapsable = $('<div id="proje_content_' + data.id + '" class="collapse"></div>');
+    $(collapsable).append(list);
+    $(div).append(collapsable);
+
     return div;
 }
