@@ -10,6 +10,7 @@ const publicDirPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
+
 //Setup handlebars engine and view location
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
@@ -25,6 +26,13 @@ app.get('', (req, res) => {
     });
 });
 
+app.get('/projeler', (req, res) => {
+    res.send({
+        resp: 'asdasd'
+    });
+})
+
 app.listen(port, () => {
     console.log('Server is up on port' + port);
 });
+

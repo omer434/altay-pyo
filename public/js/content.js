@@ -1,5 +1,5 @@
-$(document).ready(function () {
 
+$(document).ready(function () {
     if (window.history && window.history.pushState) {
 
         window.history.pushState('forward', null, './#forward');
@@ -31,6 +31,8 @@ $(document).ready(function () {
     $("#btnYillaraGoreSorgula").click(function(e) {
         oncekiAdimId = 'a-baslangic';
         gotToTab('a-yillar');
+        getProjeler();
+
     });
 
     $("#btnProjelereGoreSorgula").click(function(e) {
@@ -63,4 +65,12 @@ $(document).ready(function () {
 
 function gotToTab(tabId) {
     $("#" + tabId).click().animate({opacity: 0}, 5000);
+}
+
+function getProjeler() {
+    const res = fetch('/projeler').then(res=>{
+        res.json().then(data => { 
+            console.log(data);
+        });
+    });
 }
