@@ -73,10 +73,13 @@ $(document).ready(function () {
             res.json().then(data => {
                 let pdf = data.resp;
 
-                $('#modal-pdf').modal('show');
+                // $('#modal-pdf').modal('show');
 
-                let pdfStr = "data:application/pdf;base64, " + pdf;
-                $("#pdf-viewer").attr("src", pdfStr);
+                // let pdfStr = "data:application/pdf;base64, " + pdf;
+                // $("#pdf-viewer").attr("src", pdfStr);
+
+                easyPDF(encodeURI(pdf), "")
+
 
 
 
