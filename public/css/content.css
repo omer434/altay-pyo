@@ -1,17 +1,21 @@
+html {
+    height: 100%;
+}
+
 .wizard {
     margin: 20px auto;
 }
 
-    .wizard .nav-tabs {
-        position: relative;
-        margin: 40px auto;
-        margin-bottom: 0;
-        border-bottom-color: #e0e0e0;
-    }
+.wizard .nav-tabs {
+    position: relative;
+    margin: 40px auto;
+    margin-bottom: 0;
+    border-bottom-color: #e0e0e0;
+}
 
-    .wizard > div.wizard-inner {
-        position: relative;
-    }
+.wizard>div.wizard-inner {
+    position: relative;
+}
 
 .connecting-line {
     height: 2px;
@@ -24,7 +28,9 @@
     z-index: 1;
 }
 
-.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+.wizard .nav-tabs>li.active>a,
+.wizard .nav-tabs>li.active>a:hover,
+.wizard .nav-tabs>li.active>a:focus {
     cursor: default;
     border: 0;
     border-bottom-color: transparent;
@@ -41,15 +47,16 @@ span.round-tab {
     position: absolute;
     left: 0;
     text-align: center;
-    font-size: 25px;
+    /* font-size: 25px; */
 }
-span.round-tab i{
-}
+
+span.round-tab i {}
+
 .wizard li.active span.round-tab {
     border: 2px solid #5bc0de;
-    
 }
-.wizard li.active span.round-tab i{
+
+.wizard li.active span.round-tab i {
     color: #5bc0de;
 }
 
@@ -58,7 +65,7 @@ span.round-tab:hover {
     border: 2px solid #333;
 }
 
-.wizard .nav-tabs > li {
+.wizard .nav-tabs>li {
     width: 25%;
 }
 
@@ -85,7 +92,7 @@ span.round-tab:hover {
     border-bottom-color: #5bc0de;
 }
 
-.wizard .nav-tabs > li a {
+.wizard .nav-tabs>li a {
     width: 70px;
     height: 70px;
     margin: 20px auto;
@@ -93,9 +100,9 @@ span.round-tab:hover {
     padding: 0;
 }
 
-    .wizard .nav-tabs > li a:hover {
-        background: transparent;
-    }
+.wizard .nav-tabs>li a:hover {
+    background: transparent;
+}
 
 .wizard .tab-pane {
     position: relative;
@@ -106,29 +113,104 @@ span.round-tab:hover {
     margin-top: 0;
 }
 
-@media( max-width : 585px ) {
-
+@media( max-width: 585px) {
     .wizard {
         width: 90%;
         height: auto !important;
     }
-
     span.round-tab {
-        font-size: 16px;
+        /* font-size: 16px; */
         width: 50px;
         height: 50px;
         line-height: 50px;
     }
-
-    .wizard .nav-tabs > li a {
+    .wizard .nav-tabs>li a {
         width: 50px;
         height: 50px;
         line-height: 50px;
     }
-
     .wizard li.active:after {
         content: " ";
         position: absolute;
         left: 35%;
     }
+}
+
+body {
+    /* background: rgb(255,255,255); */
+    width: 100%;
+    min-height: 100%;
+    background-image: url('../img/altay_logo.png');
+    /* fallback */
+    background-image: url('../img/altay_logo.png'), linear-gradient(317deg, rgba(255, 255, 255, 1) 40%, rgba(41, 130, 193, 1) 40%, rgba(0, 212, 255, 1) 100%);
+    /* W3C */
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    font-family: Helvetica;
+}
+
+@media (orientation: landscape) {
+    html {
+        height: 100%;
+        /* max-height: 200%; */
+    }
+    body {
+        background-image: url('../img/altay_logo.png');
+        /* fallback */
+        background-image: url('../img/altay_logo.png'), linear-gradient(317deg, rgba(255, 255, 255, 1) 52%, rgba(41, 130, 193, 1) 52%, rgba(0, 212, 255, 1) 100%);
+        /* W3C */
+        font-style: normal;
+    }
+    .menu-button h1 {
+        font-size: 42px;
+        font-weight: 500;
+        width: 100%;
+        padding: 5px 50px 5px 5px;
+    }
+    a.menu-button:first-child h1 {
+        margin-top: 0%;
+    }
+}
+
+@media (orientation: portrait) {
+    html {
+        padding-top: 15%;
+    }
+    body {}
+    a.menu-button {
+        width: 100%;
+        border: none;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 100px 10px 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 1%;
+        font-family: Helvetica;
+    }
+    a.menu-button h1 {
+        font-size: 80px;
+    }
+    a.menu-button:first-child {
+        margin-top: 100%;
+    }
+}
+
+a.menu-button {
+    border: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: Helvetica;
+}
+
+a.menu-button:first-child {
+    margin-top: 0%;
+}
+
+a.menu-button:hover {
+    border: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
