@@ -1,0 +1,43 @@
+@media (orientation: landscape) {
+    body {
+        overflow: hidden;
+    }
+    .label-yillar {
+        color: white;
+        font-variant: small-caps;
+        font-weight: 100;
+        font-family: 'Calibri';
+    }
+    .btn-circle.btn-xl {
+        width: 50px;
+        height: 50px;
+        padding: 10px 10px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+        background-color: #2983C2;
+    }
+    .overlay {
+        position: fixed;
+        overflow-y: scroll;
+        top: 25%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    .btn-yil {
+        margin: 5px;
+        background-color: #4682B4;
+        color: white;
+        background-color: rgba(70, 130, 180, 0.6);
+        cursor: pointer;
+        font-weight: 100;
+        font-family: 'Calibri';
+    }
+    .btn-yil h1 {
+        color: white;
+    }
+}

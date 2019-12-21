@@ -1,0 +1,23 @@
+@media (orientation: portrait) {
+    html {
+        padding-top: 15%;
+    }
+    body {}
+    a.menu-button {
+        width: 100%;
+        border: none;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 100px 10px 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 1%;
+        font-family: 'Calibri';
+    }
+    a.menu-button h1 {
+        font-size: 80px;
+    }
+    a.menu-button:first-child {
+        margin-top: 100%;
+    }
+}

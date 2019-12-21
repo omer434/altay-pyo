@@ -2,7 +2,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/content.css">
-
+<link rel="stylesheet" href="css/content-landscape.css">
+<link rel="stylesheet" href="css/content-portrait.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/easyPDF.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css">
@@ -60,13 +61,7 @@
                             {{>sorgulamaTipi}}
                         </div>
                         <div class="tab-pane" id="div-yillar" role="tabpanel">
-                            <h1 class="display-1">Yıllar</h1>
-                            <button type="button" class="btn btn-default prev-step">Geri</button>
-                            <hr />
                             {{>yillar}}
-                            <ul class="list-inline pull-right">
-                                <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
-                            </ul>
                         </div>
                         <div class="tab-pane" id="div-haftalar" role="tabpanel">
                             <h1 class="display-1">Haftalar</h1>
