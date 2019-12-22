@@ -1,23 +1,29 @@
 @media (orientation: portrait) {
     html {
-        padding-top: 15%;
+        padding-top: 5%;
     }
-    body {}
+    body {
+        background-image: url('../img/altay_logo.png');
+        /* fallback */
+        background-image: url('../img/altay_logo.png'), linear-gradient(317deg, rgba(255, 255, 255, 1) 36%, rgba(41, 130, 193, 1) 36%, rgba(0, 212, 255, 1) 100%);
+        /* W3C */
+        font-style: normal;
+    }
     a.menu-button {
         width: 100%;
         border: none;
         color: white;
         background-color: rgba(255, 255, 255, 0.5);
         padding: 10px 100px 10px 10px;
-        margin-left: 10%;
+        margin-left: 5%;
         margin-right: 10%;
         margin-top: 1%;
         font-family: 'Calibri';
     }
     a.menu-button h1 {
-        font-size: 80px;
+        font-size: 70px;
     }
     a.menu-button:first-child {
-        margin-top: 100%;
+        margin-top: 30%;
     }
 }
