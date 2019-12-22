@@ -41,7 +41,7 @@ const pdfs = [{
 const haftalikOzet = [{
         "yil": 2020,
         "hafta": 1,
-        "pdf": 1
+        "pdf": 3
     },
     {
         "yil": 2019,

@@ -86,7 +86,7 @@ function getProjeler() {
 }
 
 function getHaftalikOzet() {
-    const res = fetch('/haftalik-ozet?yil=' + secilenYil + '&hafta=' + secilenHafta).then(res => {
+    const res = fetch('/haftalik-ozet?yil=' + 2020 + '&hafta=' + 1).then(res => {
         res.json().then(data => {
             // let pdfViewer = '<object style="position:absolute; height:100%; width: 100%" data="data:application/pdf;base64, ' + data.resp + '" type="application/pdf"><iframe src="https://docs.google.com/viewer?&embedded=true"></iframe></object>';
             // $("#pdfResult").append(pdfViewer);
