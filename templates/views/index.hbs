@@ -8,13 +8,22 @@
 </head>
 
 <body style="padding: 0px">
-    <div id="modal-pdf" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <iframe id="pdf-viewer" src="" style="width: 100%; height: 100%"></iframe>
-            </div>
-        </div>
-    </div>
+            <a href="#modalPdf" id="showModalPdf" role="button" class="btn btn-primary" style="visibility: hidden;" data-toggle="modal"></a>
+            <div id="pdf-container"></div>
+
+            {{!-- <div class="modal fade" id="modalPdf" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-full" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        </div>
+                        <div class="modal-body p-4" id="pdfResult" style="height: 100%; border: 1px solid red">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
     {{!-- {{>banner}} --}}
     {{>content}}
     {{>footer}}

@@ -1,0 +1,18 @@
+@media (orientation: portrait) {
+    #haftalar-container {
+        overflow: hidden;
+        position: fixed;
+        overflow-y: scroll;
+        max-height: 70%;
+        width: 100%;
+    }
+    .col-hafta {
+        text-align: center;
+        background-color: rgba(70, 130, 180, 0.7);
+        cursor: pointer;
+        border: 1px solid rgb(70, 130, 180);
+    }
+    .btn-hafta>h1 {
+        color: white;
+    }
+}

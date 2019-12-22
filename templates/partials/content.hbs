@@ -1,3 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"
+    integrity="sha256-8zyeSXm+yTvzUN1VgAOinFgaVFEFTyYzWShOy9w7WoQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css"
+    integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"
+    integrity="sha256-nZaxPHA2uAaquixjSDX19TmIlbRNCOrf5HO1oHl5p70=" crossorigin="anonymous"></script>
+
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -9,6 +17,17 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/blitzer/jquery-ui.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.489/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.489/pdf.worker.js"></script>
+
+<style>
+    .modal-full {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .modal-full .modal-content {
+        min-height: 100vh;
+    }
+</style>
 
 <div class="container" id="div-container">
     <div class="row">
@@ -64,13 +83,7 @@
                             {{>yillar}}
                         </div>
                         <div class="tab-pane" id="div-haftalar" role="tabpanel">
-                            <h1 class="display-1">Haftalar</h1>
-                            <button type="button" class="btn btn-default prev-step">Geri</button>
-                            <hr />
                             {{>haftalar}}
-                            <ul class="list-inline pull-right">
-                                <li><button type="button" class="btn btn-default prev-step">Geri</button></li>
-                            </ul>
                         </div>
                         <div class="tab-pane" id="div-projeler" role="tabpanel">
                             <h1 class="display-1">Projeler</h1>
@@ -84,6 +97,9 @@
                     </div>
                 </form>
             </div>
+
+
+
         </section>
     </div>
 </div>
