@@ -37,8 +37,8 @@ $(document).ready(function() {
     });
 
     $("#btnProjelereGoreSorgula").click(function(e) {
-        oncekiAdimId = 'a-baslangic';
-        gotToTab('a-projeler');
+        // oncekiAdimId = 'a-baslangic';
+        // gotToTab('a-projeler');
     });
 
     $(".btn-yil").click(function(e) {
